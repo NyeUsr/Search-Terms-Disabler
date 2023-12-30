@@ -3,8 +3,8 @@ const braveSearchUrl = "https://search.brave.com/search?q=";
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     const url = new URL(details.url);
-
-    if (url.hostname === "fakesearch.gov") {
+    
+    if (url.hostname === "example.com") {
       const searchQuery = url.searchParams.get("s");
       const encodedSearchQuery = encodeURIComponent(searchQuery);
       const redirectUrl = braveSearchUrl + encodedSearchQuery;

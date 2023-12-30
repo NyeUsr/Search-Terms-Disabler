@@ -1,23 +1,15 @@
 {
   "manifest_version": 2,
   "name": "Android Search Terms Disabler",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Redirects search queries from a fake search engine to Brave Search. This gives you the full URL in the address bar instead of search terms on Android.",
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "storage",
-    "https://fakesearch.gov/*"
+    "https://example.com/*"
   ],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
-  },
-  "chrome_settings_overrides": {
-            "search_provider": {
-                "name": "Fake Search",
-                "search_url": "https://fakesearch.gov?s={searchTerms}",
-                "keyword": "fs"
-    }
   }
 }
